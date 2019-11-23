@@ -2,7 +2,7 @@
 #define _FRC_MCP2515_H_
 
 #include <SPI.h>
-#include "frc/can_core.h"
+#include "frc_can_core.h"
 
 /*
  *  Speed 8M

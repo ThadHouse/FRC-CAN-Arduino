@@ -1,5 +1,5 @@
-#include "frc/CAN.h"
-#include "frc/mcp2515.h"
+#include "frc_CAN.h"
+#include "frc_mcp2515.h"
 
 using namespace frc;
 

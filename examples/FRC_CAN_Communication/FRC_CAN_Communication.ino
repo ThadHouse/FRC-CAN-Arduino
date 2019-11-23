@@ -1,6 +1,6 @@
 
-#include "frc/mcp2515.h"
-#include "frc/CAN.h"
+#include "frc_mcp2515.h"
+#include "frc_CAN.h"
 
 // Define the CS pin and the interrupt pin
 #define CAN_CS 10
