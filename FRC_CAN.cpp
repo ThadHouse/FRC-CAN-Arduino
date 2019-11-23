@@ -3,11 +3,11 @@
 
 using namespace frc;
 
-  MCP2515* CAN::m_mcp2515 = nullptr;
-  uint8_t CAN::m_interruptPin = 0;
-  CAN::MessageCallback CAN::m_messageCb = nullptr; 
-  CAN* CAN::m_canClasses[16];
-  uint8_t CAN::m_canCount = 0;
+MCP2515* CAN::m_mcp2515 = nullptr;
+uint8_t CAN::m_interruptPin = 0;
+CAN::MessageCallback CAN::m_messageCb = nullptr; 
+CAN* CAN::m_canClasses[16];
+uint8_t CAN::m_canCount = 0;
 
 
 void CAN::SetCANImpl(MCP2515* mcp, uint8_t iPin, CAN::MessageCallback cb) {

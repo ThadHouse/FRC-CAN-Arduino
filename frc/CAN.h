@@ -1,5 +1,7 @@
 #pragma once
 
+#include <stdint.h>
+
 class MCP2515;
 
 namespace frc
