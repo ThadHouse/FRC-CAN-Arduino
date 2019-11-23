@@ -54,8 +54,9 @@ constexpr uint32_t createCANId(uint16_t apiId, uint8_t deviceId, uint8_t manufac
 class CAN
 {
 public:
-  typedef void (*MessageCallback)(CAN *can, int apiId);
-  static void SetCANImpl(MCP2515 *mcp2515, uint8_t interruptPin, MessageCallback messageCallback);
+  typedef void (*MessageCallback)(CAN *can, int apiId, bool rtr, const CANData& message);
+  typedef void (*UnknownMessageCallback)(uint32_t id, const CANData& message);
+  static void SetCANImpl(MCP2515 *mcp2515, uint8_t interruptPin, MessageCallback messageCallback, UnknownMessageCallback unknownCallback);
 
   static void Update();
 
@@ -80,6 +81,7 @@ private:
   static MCP2515* m_mcp2515;
   static uint8_t m_interruptPin;
   static CAN::MessageCallback m_messageCb; 
+  static CAN::UnknownMessageCallback m_unknownMessageCb; 
   static CAN* m_canClasses[16];
   static uint8_t m_canCount;
 
