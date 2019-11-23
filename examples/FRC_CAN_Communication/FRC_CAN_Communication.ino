@@ -1,5 +1,5 @@
 
-#include "mcp2515/mcp2515.h"
+#include "frc/mcp2515.h"
 #include "frc/CAN.h"
 
 // Define the CS pin and the interrupt pin
@@ -7,7 +7,7 @@
 #define CAN_INTERRUPT 2
 
 // Create an MCP2515 device. Only need to create 1 of these
-MCP2515 mcp2515{CAN_CS};
+frc::MCP2515 mcp2515{CAN_CS};
 
 // Create an FRC CAN Device. You can create up to 16 of these in 1 progam
 // Any more will overflow a global array
@@ -31,7 +31,7 @@ void setup() {
     auto err = mcp2515.reset();
     // CAN rate must be 1000KBPS to work with the FRC Ecosystem
     // Clock rate must match clock rate of CAN Board.
-    err = mcp2515.setBitrate(CAN_1000KBPS, CAN_CLOCK::MCP_8MHZ);
+    err = mcp2515.setBitrate(frc::CAN_1000KBPS, frc::CAN_CLOCK::MCP_8MHZ);
 
     // Set up to normal CAN mode
     err = mcp2515.setNormalMode();

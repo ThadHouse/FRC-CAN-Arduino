@@ -1,9 +1,9 @@
 #include "frc/CAN.h"
-#include "mcp2515/mcp2515.h"
+#include "frc/mcp2515.h"
 
 using namespace frc;
 
-MCP2515 *CAN::m_mcp2515 = nullptr;
+frc::MCP2515 *CAN::m_mcp2515 = nullptr;
 uint8_t CAN::m_interruptPin = 0;
 CAN::MessageCallback CAN::m_messageCb = nullptr;
 CAN::UnknownMessageCallback CAN::m_unknownMessageCb = nullptr;

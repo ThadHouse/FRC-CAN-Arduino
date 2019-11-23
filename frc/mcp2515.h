@@ -1,8 +1,8 @@
-#ifndef _MCP2515_H_
-#define _MCP2515_H_
+#ifndef _FRC_MCP2515_H_
+#define _FRC_MCP2515_H_
 
 #include <SPI.h>
-#include "can.h"
+#include "frc/can_core.h"
 
 /*
  *  Speed 8M
@@ -168,6 +168,8 @@
 #define MCP_20MHz_33k3BPS_CFG1 (0x0B)
 #define MCP_20MHz_33k3BPS_CFG2 (0xFF)
 #define MCP_20MHz_33k3BPS_CFG3 (0x87)
+
+namespace frc {
 
 enum CAN_CLOCK {
     MCP_20MHZ,
@@ -485,5 +487,7 @@ class MCP2515
         void clearMERR();
         void clearERRIF();
 };
+
+}
 
 #endif

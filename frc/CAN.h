@@ -2,10 +2,9 @@
 
 #include <stdint.h>
 
-class MCP2515;
-
 namespace frc
 {
+class MCP2515;
 struct CANData
 {
   uint8_t data[8];

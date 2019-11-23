@@ -1,4 +1,6 @@
-#include "mcp2515/mcp2515.h"
+#include "frc/mcp2515.h"
+
+using namespace frc;
 
 const struct MCP2515::TXBn_REGS MCP2515::TXB[MCP2515::N_TXBUFFERS] = {
     {MCP_TXB0CTRL, MCP_TXB0SIDH, MCP_TXB0DATA},
